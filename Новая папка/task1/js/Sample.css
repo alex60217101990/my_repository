@@ -1,0 +1,68 @@
+DVD
+{
+background-color: #ffffff;
+width: 100%;
+}
+DVD string{
+	display: table;
+	margin: 0 auto;
+}
+string
+{
+display: table-row;
+width: 80%;
+}
+Name
+{
+color: #FF0000;
+font-size: 15pt;
+text-align: center;
+width: 25%; border: 1px solid #000000;
+	display: table-cell;
+}
+ShortDescription
+{
+color: #0000FF;
+font-size: 15pt;
+text-align: center;
+width: 25%; border: 1px solid #000000;
+	display: table-cell;
+}
+Photo
+{
+width: 50%; border: 1px solid #000000;
+	display: table-cell;
+height: 200px;}
+
+#i1{
+background: #000 url(https://basik.ru/images/game_wallpapers_423/08_game_wallpapers.jpg) no-repeat;
+background-size: 80%; background-position: center;
+}
+#i2{
+background: #000 url(http://media.pn.am/media/issue/202/507/photo/202507.jpg) no-repeat;
+background-size: 80%; background-position: center;
+}
+#i3{
+background: #000 url(https://pixel.in.ua/wp-content/uploads/2015/10/00223.jpg) no-repeat;
+background-size: 80%; background-position: center;	
+}
+#i4{
+background: #000 url(http://www.marketanalitika.ru/media/games_image_2.jpg) no-repeat;
+background-size: 80%; background-position: center;
+}
+#i5{
+	background: #000 url(https://img.megaobzor.com/old/hardmind/news/topgamesreviews1.jpg) no-repeat;
+background-size: 80%; background-position: center;
+}
+#i6{
+background: #000 url(http://www.vladtime.ru/uploads/posts/2016-11/1479462357_452879_master-chif_oruzhie_1680x1050_www.getbg.net.jpg) no-repeat;
+background-size: 80%; background-position: center;	
+}
+#i7{
+background: #000 url(http://teleprogramma.pro/wp-content/uploads/2016/09/73bae6de4296e4388d2b054b0ae13605.jpg) no-repeat;
+background-size: 80%; background-position: center;	
+}
+#i8{
+background: #000 url(https://cdn3.whatculture.com/images/2013/06/cod-black-ops-2-preview-0-600x300.jpg) no-repeat;
+background-size: 80%; background-position: center;	
+}

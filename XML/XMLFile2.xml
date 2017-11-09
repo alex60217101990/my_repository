@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE note SYSTEM "Note1.dtd">
+<note>
+<category name="cat1">
+  <prduct id="1" name="fjvr" price="15224">
+    jbhfjbfgkjbjtg
+  </prduct>
+  <product id="23" name="fjvr" price="15224">
+    rgrggg
+  </product>
+  <product id="3" name="fjvr" price="15224">
+    rgrgrgrgrgrgrgr
+  </product>
+</category>
+<category name="cat2">
+  <product id="1" name="fjvr">
+    rgrgrgrgrgtrht
+  </product>
+  <product id="1" name="fjvr">
+rgrrgrgrgrg
+  </product>
+  <product>
+rgrgrgrgrgrgggrg
+  </product>
+</category>
+</note>

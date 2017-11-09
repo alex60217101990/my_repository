@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body id="body_id">
+<script type="js/Category.js"></script>
+<script src="js/product.js"></script>
+<script src="js/cart.js"></script>
+<script src="script.js"></script>
+<!--<ul> 
+<li>jghktu rkjgntkgnt gtnhtht</li>	
+<li>thtk tjh fjgt jrngthb</li>
+<li>tjgbtk trjgth jrhgth jrbgjtht</li>
+<li>tjhnjt tjhn</li>
+<li>tkhn tjhhnthn</li>
+<li>tkhj tkhjtiht tkhjktihjt</li>
+</ul>-->
+<div id="category">
+
+</div>
+<div id="products">
+	
+</div>
+<script type="text/javascript">
+	var el=document.getElementsByTagName('li');
+	for(var i=0; i<el.length; i++){
+		var counter=1;
+		var list=el[i].innerHTML;
+		var target=' ';
+		var pos=0;
+		do {
+  			var foundPos = list.indexOf(target, pos);
+  			if (foundPos == -1) break;
+
+ 			 counter++;
+ 			 pos = foundPos + 1; // продолжить поиск со следующей
+			}while(true); 
+		//alert(counter);
+		if(counter===2)
+		el[i].style.color='red';
+	}
+	var t=document.getElementById('table');
+	for(var j=0; j<t.children.length; j++){
+		if(t.children[j].innerHTML!=='')
+		t.children[j].style.background='green';
+	}
+</script>
+</body>
+
+</html>

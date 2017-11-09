@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Aleandr Ershov">
+    <title>Document</title>
+    <style type="text/css">
+    	/*body{
+    		position: relative;
+    	}
+    	#i1,#i2{
+    		width: 100px;
+    		height: 100px;
+    		background: #000;
+    		position: absolute;
+    	}*/
+    </style>
+</head>
+
+<body>
+<div id="" ="ball"></div>
+<script type="text/javascript">
+var ball = document.getElementById('ball');
+
+ball.addEventListener("mousedown", function(e) { // 1. отследить нажатие
+
+  // подготовить к перемещению
+  // 2. разместить на том же месте, но в абсолютных координатах
+  ball.style.position = 'absolute';
+  moveAt(e);
+  // переместим в body, чтобы мяч был точно не внутри position:relative
+  document.body.appendChild(ball);
+
+  ball.style.zIndex = 1000; // показывать мяч над другими элементами
+
+  // передвинуть мяч под координаты курсора
+  // и сдвинуть на половину ширины/высоты для центрирования
+  function moveAt(e) {
+    ball.style.left = e.pageX - ball.offsetWidth / 2 + 'px';
+    ball.style.top = e.pageY - ball.offsetHeight / 2 + 'px';
+  }
+
+  // 3, перемещать по экрану
+  document.onmousemove = function(e) {
+    moveAt(e);
+  }
+
+  // 4. отследить окончание переноса
+  ball.onmouseup = function() {
+    document.onmousemove = null;
+    ball.onmouseup = null;
+  }
+});
+ball.ondragstart = function() {
+  return false;
+};
+</script>
+</body>
+</html>

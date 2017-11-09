@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<x:Books  xmlns:x="x-schema:orderschema.xml" >
+  <x:Book editionNumber="8" publicationType="print">
+   
+    <x:Publisher>
+      <x:retherht>srgwe</x:retherht>
+      <x:PublisherID>P1</x:PublisherID>
+      <x:PublisherName>GGG</x:PublisherName>
+      <x:PublisherID>P2</x:PublisherID>
+      <x:PublisherName>GGG</x:PublisherName>
+    </x:Publisher>
+    <x:test>qwerty</x:test>
+    <!--
+    <x:Publisher>
+      <x:PublisherID>P3</x:PublisherID>
+      <x:PublisherName>North</x:PublisherName>
+    </x:Publisher>
+    
+    -->
+  </x:Book>
+
+  <x:Book editionNumber="2" ><!--publicationType="internet"-->
+    <x:Publisher>
+      <x:PublisherID>P4</x:PublisherID>
+      <x:PublisherName>GGG</x:PublisherName>
+      <x:PublisherID>P5</x:PublisherID>
+      <x:PublisherName>GGG</x:PublisherName>
+    </x:Publisher>
+
+  </x:Book>
+</x:Books>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr1 = [1,2,3,4,5,6,7,8,9,10];
+		console.log(arr1);
+
+		Array.prototype.odd = function(){
+			return this.filter(function(item){
+				return item % 2;
+			});
+		}
+
+		console.log(arr1.odd());
+
+		let arr2 = [234,523,542345,2345,2362,562,36423,52134,2];
+		console.log(arr2.odd());
+
+
+	</script>
+</body>
+</html>

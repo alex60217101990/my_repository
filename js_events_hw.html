@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{height: 4000px; margin: 0; }
+        #coord{
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            //position: absolute;
+            position: fixed;
+            font-size: 30px; font-weight: bold;
+            color: midnightblue;
+        }
+        #head{
+            color: gainsboro; font-size: 40px; letter-spacing: 5px;
+            width: 100%; height: 10%; text-align: center;
+            background: #555555; position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <header id="head">Заголовок сайта:</header>
+   <!-- <div id="coord">x: 125 ; y: 52</div> -->
+<script>
+    /*let coordinate=document.querySelector("#coord");
+    //console.dir(coordinate);
+    document.addEventListener('mousemove', function (event) {
+       coordinate.innerHTML= 'x:'+(event.clientX-pageXOffset)+'; y: '+(event.clientY-pageYOffset);
+    });*/
+    let el=document.body;
+    console.dir(el);
+    let el1=document.body.getElementsByTagName('header')[0];
+    console.dir(el1);
+    document.addEventListener("scroll", function (event){
+        if(document.body.scrollTop>400){
+            console.dir(pageYOffset);
+            el1.style.top=pageYOffset+'px';
+        }
+        else{
+            el1.style.top=0+'px';
+        }
+    });
+    
+</script>
+</body>
+</html>

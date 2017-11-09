@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes rotate{
+            0%{ transform: translate(0,0), rotateY(0deg);}
+            25%{ transform: rotateY(180deg);}
+            50%{ transform: translate(50%,0), rotateY(360deg);}
+            75%{ transform: rotateY(-180deg);}
+            100%{ transform: translate(0,0), rotateY(0deg);}
+        }
+        #smile{
+            width: 100px;
+            position: relative;
+            cursor: pointer;
+            animation:  rotate 10s infinite linear;
+        }
+    </style>
+</head>
+<body id="body">
+
+<script>
+    /*script1*/
+  /*  function startTime()
+    {
+        if(document.getElementById('id1')===null) {
+            let div1 = document.createElement('div');
+            div1.id = 'id1';
+            div1.innerHTML = '<b>INFO1</b>';
+            body.appendChild(div1);
+            div1.style.borderWidth = '1px';
+            div1.style.borderStyle = 'solid';
+            div1.style.borderRadius = '5px';
+            div1.style.borderColor = 'red';
+            div1.style.textAlign = 'center';
+            div1.style.backgroundColor = 'blue';
+            div1.style.display = 'block';
+            div1.style.width = '300px';
+        }
+        else{
+            var el1=document.getElementById('id1');
+            var el=document.getElementById('id1').parentNode;
+            el.removeChild(el1);
+        }
+    }
+setInterval(function(){startTime();},2000);
+    startTime();
+
+    */
+    /*script2*/
+/*
+    var i = 1; var u=5;
+    function func(i){
+        if(i<=5){
+        let div1 = document.createElement('div');
+        div1.className = 'id1';
+        div1.innerHTML = '<b>INFO1</b>';
+        div1.style.borderWidth = '1px';
+        div1.style.borderStyle = 'solid';
+        div1.style.borderRadius = '5px';
+        div1.style.marginTop='30px';
+        div1.style.borderColor = 'red';
+        div1.style.textAlign = 'center';
+        div1.style.backgroundColor = 'blue';
+        div1.style.display = 'block';
+        div1.style.width = '300px';
+        var el=document.getElementById('body');
+        el.insertBefore(div1, el.children[1]);}
+        else {
+            var el1=document.getElementsByClassName('id1');
+            if(el1.length===0) return;
+            var el=document.getElementsByClassName('id1')[0].parentNode;
+            el.removeChild(el1[0]);
+        };
+    };
+    var tId=setTimeout(function run() {
+        func(i++); if(u==0) clearInterval(tId); clearTimeout(tId);
+        setTimeout(run, 2000);
+    }, 2000); */
+
+
+/*script 3: */
+    function fun() {
+        if(document.getElementById('smile')===null) {
+            let smile = document.createElement('img');
+            smile.id = 'smile';
+            function randomInteger(min, max) {
+                var rand = min + Math.random() * (max + 1 - min);
+                rand = Math.floor(rand);
+                return rand;
+            }
+            smile.setAttribute('src', 'smile1.png');
+            smile.style.left= +(randomInteger(1, (document.body.clientWidth-50)))+'px';
+            smile.style.top= +(randomInteger(1, 600))+'px';
+            let b=document.getElementsByTagName('body')[0];
+            b.appendChild(smile);
+        }
+        else{
+            let el1=document.querySelector('#smile');
+            let el2=document.querySelector('#smile').parentNode;
+            el2.removeChild(el1);
+        }
+    }
+    setTimeout(function start() {
+        fun(); setTimeout(start,2400);
+    },2400);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Js_cookie</title>
+</head>
+	<body>
+	<script src="Cookie.js"></script>
+		<script type="text/javascript">
+			// возвращает cookie с именем name, если есть, если нет, то undefined
+			
+
+ 				
+				let MyCookie;
+				console.log(getCookie("MyCookie"));
+				setCookie("MyCookie", "1122235545632667889989", 3*3600000, "newDir/MyCookie", "itStep.com", true);
+				console.log(getCookie("MyCookie"));
+				deleteCookie("MyCookie");
+				console.log(getCookie("MyCookie"));
+
+		</script>
+	</body>
+</html>

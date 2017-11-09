@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Schema name="orderschema.xml" xmlns="urn:schemas-microsoft-com:xml-data"
+    xmlns:dt="urn:schemas-microsoft-com:datatypes">
+
+  <AttributeType name="editionNumber" dt:type="i1" required="yes">
+  </AttributeType>
+  <AttributeType name="publicationType" dt:type="enumeration"
+                 dt:values="internet print"
+                 required="yes">
+  </AttributeType>
+
+  <ElementType name="retherht" model="closed" dt:type="string" content="textOnly"></ElementType>
+  <ElementType name="PublisherID" model="closed" dt:type="id"
+    content="textOnly">
+  </ElementType>
+  <ElementType name="PublisherName" model="closed" dt:type="string"
+    content="textOnly">
+  </ElementType>
+
+  <ElementType name="Publisher" model="closed" content="eltOnly"
+    order="many">
+    <element type="PublisherID"/>
+    <element type="PublisherName"/>
+    <element type="retherht"/>
+  </ElementType>
+  <ElementType name="test" dt:type="string">
+  </ElementType>
+  <ElementType name="Book" model="closed" content="eltOnly"
+    order="seq">
+    <element type="Publisher"/>
+    <element type="test" minOccurs="1" maxOccurs="*"/>
+    <attribute type="editionNumber"/>
+    <attribute type="publicationType" required="no"/>
+  </ElementType>
+
+	<ElementType name="Books" model="closed" content="eltOnly"
+   order="many">
+		<element type="Book" minOccurs="1" maxOccurs="*"/>
+	</ElementType>
+
+</Schema>
+

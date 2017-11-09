@@ -1,0 +1,9 @@
+﻿  <!ELEMENT note (category+,product+)>
+  <!ELEMENT category (product+)>
+  <!ELEMENT product (#PCDATA)>
+<!ATTLIST category name CDATA #REQUIRED>
+<!ATTLIST product
+    id ID #REQUIRED
+    name CDATA #REQUIRED
+    price CDATA #IMPLIED
+>

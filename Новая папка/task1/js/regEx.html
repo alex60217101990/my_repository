@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	</head>
+	<body>
+	<form>
+		<textarea>
+		</textarea>
+		<button type="submite">enter</button>
+	</form>
+	<script type="text/javascript">
+		var a="12354fjvbfvj5 145,fgjkht 51tkhthjtlh5785 562 258 789";
+		console.log(a.replace(/\b\d{3}\b/ig, '"$&"'));
+		// Дано фио форма определить что пользователь ввел фио и все с большой буквы.
+		var butt=document.forms[0].elements[1];
+		console.dir(butt.innerHTML);
+		//console.log(butt.innerHTML.match(/\b[A-Z]\b/g);
+			butt.addEventListener('click', translate_other_el);
+			function translate_other_el(){
+				if(this.innerHTML.length){
+					var text=butt.innerHTML;
+					console.log(text.match(/^[А-Я][а-я]+\S[А-Я][а-я]+\S[А-Я][а-я]+$/ig));
+					console.log(123);
+				}
+			}
+	</script>
+	</body>
+	</html>

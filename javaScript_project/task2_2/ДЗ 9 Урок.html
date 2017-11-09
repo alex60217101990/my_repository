@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+.alert 
+{
+  padding: 15px;
+  border: 1px solid red;
+  border-radius: 10px;
+  margin: 5px;
+  width: 500px;
+  margin-left: 30%;
+  text-align: center;
+ }
+ 
+</style>
+
+<body>
+
+<script>
+var kol = 0;
+console.log('Start');
+var timerId = setInterval(Massage, 1000);
+setTimeout(function() {clearInterval(timerId)}, 5000);
+
+function Massage()
+{
+
+	//while(1){
+	//	console.log("drghdth");
+	//}
+  kol++;
+  var div = document.createElement('div');
+  div.id = "msg" + kol;
+  div.className = "alert";  
+  div.innerHTML = "<b>Massage</b> (" + kol + ")";
+  document.body.appendChild(div);
+  console.dir(div);
+
+  
+  if(kol == 5)
+  {
+	setTimeout(function() 
+	{
+		//div.parentNode.removeChild(msg2);
+		//div.parentNode.removeChild(msg3);
+		//div.parentNode.removeChild(msg4);
+		
+		let elements = document.getElementsByTagName("div");
+		for(var i = elements.length-2; i > 0 ; i--)
+		{
+			console.log(i);
+			elements[i].remove();
+			//elements[i].parentNode.removeChild(elements[i]);
+		}
+	}, 2000);
+  }
+}
+   kol = 0;
+
+</script>
+</body>
+</html>

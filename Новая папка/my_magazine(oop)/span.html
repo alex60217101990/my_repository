@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta name="author" content="Aleandr Ershov">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Document</title>
+</head>
+<body>
+<script>
+	$( '<form><input type="text" placeholder="enter text" id="text"></input><input type="button" value="ENTER" id="butt"></input></form>' ).appendTo( "body" );
+	$( "#butt" ).click(function() {
+  	var test1=$("<span></span>");
+  	test1.click(function(){
+
+  		this.remove();
+  	});
+  	var text1=$("#text");
+  	test1.appendTo( "body" );
+  		test1.css( "border", "1px solid red" );
+  		test1.css( "cursor", "pointer" );
+  		test1.text(text1.val());
+  		text1.val('');
+});
+</script>
+</body>
+</html>

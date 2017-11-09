@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		select{
+			width: 30%; height: 80%;
+			text-align: center; font-size: 25px; color: grey;
+		}
+		form{
+			margin: 0 auto;
+			width: 70%;
+			height: 500px;
+		}
+		button{
+			background: yellow; box-shadow: box-shadow: 0 0 10px rgba(0,0,0,0.5); margin: 10px; color: grey;
+			border-radius: 10px; width: 8%; height: 10%; font-size: 30px; background-size: 100%;
+		}
+	</style>
+</head>
+	<body>
+		<form action="new_php.php" method="post">
+			<select multiple name="count[]">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+			</select>
+			<button>>></button>
+			<button><<</button>
+			<select multiple>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+				<option>13</option>
+				<option>14</option>
+			</select>
+		</form>
+		<script type="text/javascript">
+			let firstSelect=document.getElementsByTagName('select');
+			//	let f_sel=document.forms[0];
+			let counter=0;
+			let butt1=document.getElementsByTagName('button')[0];
+			let butt2=document.getElementsByTagName('button')[1];
+			butt1.addEventListener('click', translate_el, false);
+			butt2.addEventListener('click', translate_other_el, false);
+			function translate_el(e){
+				for(let i=0; i<firstSelect[0].options.length; i++){
+					if(firstSelect[0].options[i].selected){
+						let time_el=firstSelect[0].options[i];
+						let new_op=document.createElement('option');
+						new_op.innerHTML=firstSelect[0].options[i].innerHTML;
+						for(let j=0; j<firstSelect[1].options.length; j++){
+							if(parseInt(firstSelect[1].options[j].textContent,10)<parseInt(time_el.textContent,10)){
+								firstSelect[1].insertBefore(new_op, firstSelect[1].options[j]);
+								break;
+							}
+							else{
+								firstSelect[1].appendChild(new_op);
+							}
+						}
+						time_el.remove();
+						console.dir(firstSelect[0].options[i]);
+					}
+				}	
+			};
+
+			function translate_other_el(e){
+				for(let i=0; i<firstSelect[1].options.length; i++){
+					if(firstSelect[1].options[i].selected){
+						let time_el=firstSelect[1].options[i];
+						let new_op=document.createElement('option');
+						new_op.innerHTML=firstSelect[1].options[i].innerHTML;
+						for(let j=0; j<firstSelect[0].options.length; j++){
+							if(parseInt(firstSelect[0].options[j].textContent,10)<parseInt(time_el.textContent,10)){
+								firstSelect[0].insertBefore(new_op, firstSelect[0].options[j]);
+								break;
+							}
+							else{
+								firstSelect[0].appendChild(new_op);
+							}
+						}
+						time_el.remove();
+						console.dir(firstSelect[1].options[i]);
+					}
+				}	
+			};
+			document.forms[0].addEventListener("submit", function(e){
+				e.preventDefault();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <title>Create Element</title>
+</head>
+
+<body>
+    <!-- Добавить "сообщение" через пять секунд после загрузки HTML и добавлять каждые 2 сек. еще по сообщению -->
+    <script type="text/javascript">
+    'use strict';
+
+    let messageCounter = 0;
+
+
+    function addCloseButton(parentEl) {
+        //creating element
+        var obj = document.createElement("div");
+
+        // set styles
+        obj.style.background = "#f00";
+        obj.style.color = "#fff";
+        obj.style.borderRadius = "5px";
+        obj.style.width = "10px";
+        obj.style.height = "10px";
+        obj.style.fontSize = "10px";
+        obj.style.position = "absolute";
+        obj.style.top = "10px";
+        obj.style.right = "10px";
+        obj.innerHTML = "X";
+
+        //add event
+        obj.onclick = function(){
+            this.parentElement.parentElement.removeChild(this.parentElement);
+        }
+        elem.removeEventListener( "click", function(){
+            this.parentElement.parentElement.removeChild(this.parentElement);
+        });
+
+
+
+        // inserting
+        parentEl.appendChild(obj);
+        
+    }
+
+    function addMessage() {
+
+        messageCounter++;
+
+        //creating element
+        var obj = document.createElement("div");
+
+        // set styles
+        obj.style.border = "1px solid red";
+        obj.style.borderRadius = "5px";
+        obj.style.fontSize = "20px";
+        obj.style.padding = "5px";
+        obj.style.margin = "5px";
+        obj.style.position = "relative";
+        obj.innerHTML = "Message " + messageCounter;
+        //I
+        //obj.className = "messaage";
+
+        //II
+        obj.classList.add("message");
+
+
+        addCloseButton(obj);
+        // inserting
+        document.body.appendChild(obj);
+
+        if(messageCounter < 5){
+            setTimeout(addMessage, 100);
+        }
+    }
+
+    function deleteMessages() {
+        let list = document.querySelectorAll("div.message");
+        //console.dir(list);
+
+        for (var i = 1; i < list.length -1; i++) {
+            
+            if(list[i].remove === undefined){
+                alert("Install browser. ))");
+            }
+
+            //I
+            //list[i].remove();
+            //II
+            list[i].parentElement.removeChild(list[i]);
+        }
+    }
+
+    console.dir(document.body);
+
+    // add first after first second
+    setTimeout(addMessage, 100);
+
+    setTimeout(deleteMessages, 700);
+
+
+    </script>
+    <div>DIV 1 TEXT</div>
+    <div>DIV 2 TEXT</div>
+    <div>DIV 3 TEXT</div>
+    <div>DIV 4 TEXT</div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+cd{
+	color: red;
+	//position: relative;
+	display: block;
+}
+#table element{
+	position: relative;
+	display: inline-table;
+	border: 1px solid red;
+}

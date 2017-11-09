@@ -1,0 +1,21 @@
+*{
+	width: all;
+}
+#body{
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+#body div{
+	position: inline-block;
+}
+#category{
+	width: 40%;
+	height: auto;
+	background: #000
+}
+#products{
+	width: 59%;
+	height: auto;
+	background: #785;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <title>Create Element</title>
+</head>
+
+<body>
+    <!-- Добавить "сообщение" через пять секунд после загрузки HTML и добавлять каждые 2 сек. еще по сообщению -->
+    <script type="text/javascript">
+    'use strict';
+
+    let messageCounter = 0;
+
+    function addMessage() {
+
+        messageCounter++;
+
+        //creating element
+        var obj = document.createElement("div");
+
+        // set styles
+        obj.style.border = "1px solid red";
+        obj.style.borderRadius = "5px";
+        obj.style.fontSize = "20px";
+        obj.style.padding = "5px";
+        obj.style.margin = "5px";
+        obj.innerHTML = "Message " + messageCounter;
+        //I
+        //obj.className = "messaage";
+
+        //II
+        obj.classList.add("message");
+        console.dir(obj);
+        // inserting
+        document.body.appendChild(obj);
+
+        if(messageCounter < 10){
+            setTimeout(addMessage, Math.floor(Math.random() * (2000 - 500 + 1)) + 500);
+        }
+        setTimeout(function(){obj.parentElement.removeChild(obj)},10000);
+    }
+
+    function deleteMessages() {
+        let list = document.querySelectorAll("div.message");
+        //console.dir(list);
+
+        for (var i = 1; i < list.length -1; i++) {
+            
+            if(list[i].remove === undefined){
+                alert("Install browser. ))");
+            }
+
+            //I
+            //list[i].remove();
+            //II
+            list[i].parentElement.removeChild(list[i]);
+        }
+    }
+
+    console.dir(document.body);
+
+    // add first after first second
+    setTimeout(addMessage, 100);
+
+    //setTimeout(deleteMessages, 700);
+
+
+    </script>
+    <div>DIV 1 TEXT</div>
+    <div>DIV 2 TEXT</div>
+    <div>DIV 3 TEXT</div>
+    <div>DIV 4 TEXT</div>
+</body>
+
+</html>
